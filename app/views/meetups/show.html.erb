@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Meetup for <%= @meetup.date %><small>(<%= @meetup.attendees.count %>)</small></h1>
+  <hr />
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Native Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @meetup.attendees.each do | attendee | %>
+      <tr>
+        <td><%= attendee.name %></td>
+        <td><%= attendee.native_language %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
