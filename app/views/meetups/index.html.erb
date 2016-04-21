@@ -1,17 +1,22 @@
 <div class="container">
   <h1>Meetups</h1>
-  <table>
+  <hr />
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Date</th>
-        <th>Show</th>
+        <th>Japanese</th>
+        <th>English</th>
+        <th>Total</th>
       </tr>
     </thead>
     <tbody>
       <% @meetups.each do | meetup | %>
       <tr>
-        <td><%= meetup.date %></td>
         <td><%= link_to meetup.date, meetup %></td>
+        <td><%= meetup.japanese_attendees.count %></td>
+        <td><%= meetup.english_attendees.count %></td>
+        <td><%= meetup.attendees.count %></td>
       </tr>
       <% end %>
     </tbody>
