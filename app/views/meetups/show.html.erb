@@ -1,7 +1,6 @@
 <div class="container">
   <h1><%= @meetup.date %> <small>(<%= @meetup.attendees.count %>)</small></h1>
   <hr />
-<%% %>
   <div class="row">
     <div class="col-md-6">
       <h4>Breakdown</h4>
@@ -9,9 +8,10 @@
           { value: @meetup.japanese_attendees.count, color:"#F7464A", highlight: "#FF5A5E", label: "Japanese"},
           { value: @meetup.english_attendees.count, color:"#46BFBD", highlight: "#5AD3D1", label: "English"}
           ] %>
-      <%= pie_chart(data, generateLegend: true,
+      <%= pie_chart(data,
         animation: false,
         responsive: true,
+        generateLegend: true,
         legendTemplate: render("layouts/legend") ) %>
     </div>
     <div class="col-md-6">
