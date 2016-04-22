@@ -20,6 +20,9 @@ module KaiwaClub
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Override secrets.yml with application.yml
+    config.secret_key_base = Figaro.env.secret_key_base
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end

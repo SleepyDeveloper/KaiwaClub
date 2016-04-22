@@ -23,6 +23,8 @@ gem 'jquery-rails'
 # use chart.js for drawing and displaying charts.
 gem 'chartjs-ror'
 
+# use figaro for configuring environment variables on dev and heroku
+gem 'figaro'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
