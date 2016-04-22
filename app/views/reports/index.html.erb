@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Reports</h1>
+  <hr />
+  <div>
+    <%= line_chart @data,
+          height: 200,
+          width: 900,
+          scaleShowLabels: true,
+          generateLegend: true,
+          responsive: true,
+          multiTooltipTemplate: multi_tooltip_template,
+          legendTemplate: render("layouts/line_legend") %>
+  </div>
+</div>

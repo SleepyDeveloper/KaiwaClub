@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :meetups
+
+  get 'reports/index'
 
   resources :users
+
+  scope :admin do
+    resources :meetups
+    get "reports", controller: 'reports', action: 'index'
+  end
 
   root 'meetups#index'
 

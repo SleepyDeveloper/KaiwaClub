@@ -110,7 +110,7 @@ footer ul li {
         width:240px;
       }
 
-.pie-legend li span {
+.legend li span {
   display: block;
   width: 14px;
   height: 14px;
@@ -120,7 +120,7 @@ footer ul li {
   margin-right: 8px;
 }
 
-.pie-legend {
+.legend {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -129,11 +129,11 @@ footer ul li {
 
 }
 
-.pie-legend li {
+.legend li {
   margin-bottom : 4px;
 }
 
-.pie-legend li:first-letter {
+.legend li:first-letter {
   text-transform: capitalize;
 }
 

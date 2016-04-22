@@ -22,6 +22,16 @@
         </button>
         <%= link_to "Kaiwa Club", root_path, id: "logo", class: "navbar-brand" %>
       </div>
+      <div class="navbar-collapse collapse" id="navbarCollapse">
+          <ul class="nav navbar-nav navbar-right">
+           <li>
+             <%= link_to "Meetups", meetups_path %>
+           </li>
+           <li>
+             <%= link_to "Reports", reports_path %>
+           </li>
+         </ul>
+      </div>
     </div>
   </nav>
 
