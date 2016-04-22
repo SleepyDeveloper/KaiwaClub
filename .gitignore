@@ -44,3 +44,6 @@ bower.json
 auto-save-list
 tramp
 .\#*
+
+# Ignore Spring files.
+/spring/*.pid

@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class MeetupsControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  test "the index page" do
+    get :index
+    assert_response :success
+    assert_select "title", "Meetups | KaiwaClub"
+  end
+
 end
