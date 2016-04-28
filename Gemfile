@@ -20,6 +20,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# use simple_form to handle forms
+gem 'simple_form'
+
 # use chart.js for drawing and displaying charts.
 gem 'chartjs-ror'
 
