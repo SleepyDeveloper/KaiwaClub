@@ -1,11 +1,17 @@
 <div class="container">
   <h1>New Meetup</div>
   <div class="row">
-    <div class="col-md-8">
-      <%= simple_form_for @meetup do | f | %>
-        <%= f.input :date %>
-        <%= f.submit "Save", class: "btn btn-primary" %>
-      <% end %>
+    <div class="col-md-12">
+      <div style="padding:20px;">
+        <%= simple_form_for @meetup do | f | %>
+          <div class="row">
+            <div class="col-md-4">
+              <%= f.input :date %>
+            </div>
+          </div>
+          <%= f.submit "Save", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
