@@ -2,12 +2,11 @@ Rails.application.routes.draw do
 
   get 'reports/index'
 
+  match 'admin/meetups/add_and_attend_meetup/:id', to: 'meetups#add_and_attend_meetup', via: 'patch'
+  match 'admin/meetups/attend_meetup', to: 'meetups#attend_meetup', via: 'patch'
+
   scope :admin do
     resources :meetups
-    scope :meetups do
-      match 'add_and_attend_meetup/:id', to: 'meetups#add_and_attend_meetup', via: 'patch'
-      match 'attend_meetup', to: 'meetups#attend_meetup', via: 'patch'
-    end    
     resources :users
     get "reports", controller: 'reports', action: 'index'
   end
