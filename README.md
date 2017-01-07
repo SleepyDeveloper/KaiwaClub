@@ -1,28 +1,15 @@
-== README
+KaiwaClub
+=========
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple rails app to manage attendance of the Japanese/English language
+exchange group that I run in Little Tokyo every other Monday. It also provides
+a few reports using chart.js such as the ratio of Japanese and English speakers
+in attendance.
 
-Things you may want to cover:
+TODO
+====
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Single admin user sign on (devise).
+* Landing and static pages that promote Little Tokyo Kaiwa Club when not logged in as admin.
+* Reports, average Japanese/non-Japanese attendance, etc.
+* add slugs for routing. (ex. /admin/meetups/2017-01-06 instead of /admin/meetups/:id)
