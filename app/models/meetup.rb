@@ -17,6 +17,10 @@ class Meetup < ActiveRecord::Base
   #   where(native_language: language)
   # }
 
+  def non_japanese_attendees
+    attendees.where.not(native_language: 'Japanese')
+  end
+
   def english_attendees
     lookup native_language: "English"
   end
