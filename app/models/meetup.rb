@@ -1,10 +1,14 @@
 class Meetup < ActiveRecord::Base
 
+  extend FriendlyId
+
   # https://robots.thoughtbot.com/accepts-nested-attributes-for-with-has-many-through
   has_many :meetup_attendees, inverse_of: :meetup
   has_many :attendees, through: :meetup_attendees, source: :attendee
 
   accepts_nested_attributes_for :meetup_attendees
+
+  friendly_id :date, use: :slugged
 
   # TODO: should we use scopes? to privde the ability to look up any language
   # after leading the meetup for almost a year, it's pretty clear that the
