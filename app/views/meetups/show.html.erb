@@ -47,29 +47,11 @@
       <br />
 
       <div id="sign_in" class="panel panel-default" style="padding:20px;">
-        <%= simple_form_for @meetup,
-          url: url_for(controller: 'meetups', action: 'attend_meetup', id: @meetup),
-          html: { id: 'sign_in_form' }  do |f| %>
-          <%= f.simple_fields_for :meetup_attendees, f.object.meetup_attendees.build do |ma| %>
-            <%= ma.association :attendee, collection: User.all.order(:name), label: "Attendee*" %>
-          <% end %>
-          <%= f.submit "Attend", class: "btn btn-primary" %>
-        <% end %>
+        <%= render "shared/sign_in", meetup: @meetup %>
       </div>
 
       <div id="new_attendee" class="panel panel-default" style="padding:20px;display:none;">
-        <%= simple_form_for @meetup,
-          url: url_for(controller: 'meetups', action: 'add_and_attend_meetup', id: @meetup),
-          html: { id: 'new_attendee_form'} do | f | %>
-          <%= simple_fields_for :meetup_attendees do | ma | %>
-            <%= simple_fields_for :user do | u | %>
-              <%= u.input :name, label: "Name*"%>
-              <%= u.input :email, label: "Email*" %>
-              <%= u.input :native_language, label: "Native Language*" %>
-            <% end %>
-            <%= f.submit "Add & Attend", class: "btn btn-primary" %>
-          <% end %>
-        <% end %>
+        <%= render "shared/new_attendee", meetup: @meetup %>
       </div>
 
     </div>

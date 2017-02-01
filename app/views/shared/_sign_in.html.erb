@@ -1,0 +1,23 @@
+<%= simple_form_for meetup,
+  url: url_for(controller: 'meetups', action: 'attend_meetup', id: meetup),
+  html: { id: 'sign_in_form' }  do |f| %>
+  <%= f.simple_fields_for :meetup_attendees, f.object.meetup_attendees.build do |ma| %>
+
+  <%= ma.association :attendee,
+                    collection: User.all.order(:name),
+                    label: 'Attendee*',
+                    include_blank: true
+  %>
+
+    <% #= ma.association :attendee, collection: User.all.order(:name), label: "Attendee*" %>
+  <% end %>
+  <%= f.submit "Attend", class: "btn btn-primary", id: 'sign_in_form' %>
+<% end %>
+
+<script>
+  $('#sign_in_form').on('submit', function(e) {
+    e.preventDefault();
+    $('#sign_in_form_button').attr('disabled', 'disabled');
+    this.submit();
+  });
+</script>

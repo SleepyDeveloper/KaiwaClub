@@ -1,0 +1,21 @@
+<%= simple_form_for meetup,
+  url: url_for(controller: 'meetups', action: 'add_and_attend_meetup', id: meetup),
+  html: { id: 'new_attendee_form'} do | f | %>
+  <%= simple_fields_for :meetup_attendees do | ma | %>
+    <%= simple_fields_for :user do | u | %>
+      <%= u.input :name, label: 'Name*'%>
+      <%= u.input :email, label: 'Email*' %>
+      <%= u.input :native_language, label: 'Native Language*' %>
+    <% end %>
+    <%= f.submit 'Add & Attend', class: 'btn btn-primary',
+          id: 'new_attendee_form_button' %>
+  <% end %>
+<% end %>
+
+<script>
+  $('#new_attendee_form').on('submit', function(e) {
+    e.preventDefault();
+    $('#new_attendee_form_button').attr('disabled', 'disabled');
+    this.submit();
+  });
+</script>
