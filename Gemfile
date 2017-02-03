@@ -29,6 +29,9 @@ gem 'chartjs-ror'
 # use figaro for configuring environment variables on dev and heroku
 gem 'figaro'
 
+# Markdown
+gem 'bluecloth'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'jquery-turbolinks'
