@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :notes
+
   get 'reports/index'
 
   match 'admin/meetups/add_and_attend_meetup/:id', to: 'meetups#add_and_attend_meetup', via: 'patch'

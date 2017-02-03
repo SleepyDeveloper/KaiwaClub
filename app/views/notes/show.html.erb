@@ -1,0 +1,8 @@
+<%= provide(:title, @note.title) %>
+<div class="container">
+
+  <%= @note.note_text(:html).html_safe %>
+
+  <%= link_to 'Edit', edit_note_path(@note) %> |
+  <%= link_to 'Back', notes_path %>
+</div>

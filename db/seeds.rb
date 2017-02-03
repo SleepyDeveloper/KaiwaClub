@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# seeding genres from seed-data/genres.yml
+unless Note.count > 0
+  note_seeds = Rails.root.join('db', 'seed_data', 'notes.yml')
+  Note.create!(YAML::load_file(note_seeds))
+end
